@@ -32,24 +32,32 @@ app.get("/city1",(req,res)=>{
   .then((response)=>{
     console.log(response.data.coord.lon);
     console.log(response.data.coord.lat);
-    res.send(`city name: ${cityName}<br>lon: ${response.data.coord.lon}<br>lat: ${response.data.coord.lat}`)
+    res.render("result",{somekey1: `${cityName}`,somekey2: `${response.data.coord.lon}`,somekey3: `${response.data.coord.lat}`})
   })
   .catch((err)=>{
-    res.render(`<h1>ERROR: You Must Provide a City Name !</h1><br><img src="https://cdn.pixabay.com/photo/2017/10/16/23/02/brooklyn-2858985_960_720.jpg">`)
+    res.send(`<h1>ERROR: You Must Provide a City Name !</h1><br><img src="https://www.kingcode.co.il/wp-content/uploads/2020/11/Error-1024x682.jpg">`)
   })
   console.log(req.query);
 })
 
 app.get("/",(req,res)=>{
-  res.render("index", {somekey: "blabla"})
+  res.render("index", {somekey: "Location page"})
 });
 
 app.get("/about",(req,res)=>{
-  res.render("about", {somekey: "blabla"})
+  res.render("about", {somekey: "About page"})
 });
 
 app.get("/help",(req,res)=>{
-  res.render("help", {somekey: "blabla"})
+  res.render("help", {somekey: "Help page"})
+});
+
+app.get("/result",(req,res)=>{
+  res.render("result", {somekey: "Result page"})
+});
+
+app.get("*",(req,res)=>{
+  res.render("error", {somekey})
 });
 
 // app.get("*",(req,res)=>{
