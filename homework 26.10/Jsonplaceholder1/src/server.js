@@ -33,7 +33,6 @@ app.delete("/comments/:id", (req, res) => {
   }
   comments.splice(comment, 1);
   fs.writeFileSync(fileName,JSON.stringify(comments));
-  fs.readFileSync(fileName,"utf8");
   res.send("have deleted");
   res.sendStatus(200);
 });
