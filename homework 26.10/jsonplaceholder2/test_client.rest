@@ -1,0 +1,17 @@
+GET http://localhost:8081/comments
+
+###
+
+POST http://localhost:8081/comments
+Content-Type: application/json
+
+{
+    "name" : "z",
+    "body" : "z",
+    "mail" : "z"
+}
+
+
+###
+
+DELETE http://localhost:8081/comments/1

@@ -1,0 +1,17 @@
+GET http://localhost:8080/comments
+
+###
+
+POST http://localhost:8080/comments
+Content-Type: application/json
+
+{
+    "name" : "haim",
+    "body" : "hero",
+    "mail" : "fuck you"
+}
+
+
+###
+
+DELETE http://localhost:8080/comments/1
