@@ -56,6 +56,15 @@ app.post("/comments", (req, res) => {
 res.sendStatus(400); 
 });
  
+
+app.patch("/comments/:id",(req,res)=>{
+  const comments = JSON.parse(fs.readFileSync(fileName,"utf8"));
+  const singleComment = comments.find(element => element.id == req.params.id);
+  singleComment.name = req.body.name,singleComment.body = req.body.body,singleComment.mail = req.body.mail;
+  fs.writeFileSync(fileName,JSON.stringify(comments));
+  singleComment ? res.send(comments) : res.send(404);
+})
+
 app.listen(PORT, () => {
   console.log(`app is listening to ${PORT}`);
 });

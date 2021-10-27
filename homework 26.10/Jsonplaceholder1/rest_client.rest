@@ -14,4 +14,15 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8080/comments/1
+DELETE http://localhost:8080/comments/2
+
+###
+
+PATCH http://localhost:8080/comments/2
+Content-Type: application/json
+
+{
+    "name": "haim",
+    "body": "big",
+    "mail": "haim@gmail.com"
+}

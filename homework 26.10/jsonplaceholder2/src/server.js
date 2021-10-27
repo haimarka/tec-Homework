@@ -48,5 +48,13 @@ app.delete("/comments/:id",(req,res)=>{
   res.sendStatus(200);
 });
 
-app.listen(PORT);
+app.patch("/comments/:id",(req,res)=>{
+  const singleComment = comments.find(element => element.id == req.params.id);
+  singleComment.name = req.body.name,singleComment.body = req.body.body,singleComment.mail = req.body.mail;
+  singleComment ? res.send(comments) : res.send(404);
+})
+
+app.listen(PORT,()=>{
+  console.log(`listening to ${PORT}`);
+});
 
