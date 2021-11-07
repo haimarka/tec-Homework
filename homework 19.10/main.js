@@ -26,7 +26,7 @@ app.get("/city1",(req,res)=>{
   const cityName = `${req.query.city1}`;
   const APIkey = "4be58b6ef34254cc7a37af635d92c515";
   const url = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${APIkey}`;
-  
+
   axios
   .get(url)
   .then((response)=>{
@@ -40,8 +40,9 @@ app.get("/city1",(req,res)=>{
   console.log(req.query);
 })
 
-app.get("/",(req,res)=>{
-  res.render("index", {somekey: "Location page"})
+
+app.get("/index",(req,res)=>{
+  res.render("index", {somekey1: ``})
 });
 
 app.get("/about",(req,res)=>{

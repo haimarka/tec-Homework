@@ -1,0 +1,32 @@
+GET http://localhost:8080/todos
+
+###
+
+GET http://localhost:8080/todos/61802ac476667a89a46889d3
+
+###
+POST http://localhost:8080/todos
+Content-Type: application/json
+
+{
+    "name": "haim",
+    "age": 259,
+    "tittle": "black"
+}
+
+###
+
+DELETE http://localhost:8080/todos/61802ac476667a89a46889d3
+
+###
+
+PATCH http://localhost:8080/todos/61802ac476667a89a46889d3
+Content-Type: application/json
+
+{
+    "site": "google",
+    "world": "earth",
+    "phone": "aaaa"
+}
+
+###
