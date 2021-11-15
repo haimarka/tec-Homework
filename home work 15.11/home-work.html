@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //1
+        const array = [];
+        let num = 1;
+        for (let i = 0; i < 1000; i++) {
+            array.push(num++)            
+        }
+        console.log(array);
+        const map = array.map(Math.sqrt)
+        console.log(map);
+
+        //2
+        const evenNums = array.filter(item => item % 2==0)
+        console.log(evenNums);
+        
+    </script>
+</body>
+</html>
