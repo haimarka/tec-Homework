@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1
+
+        // בתרגיל הראשון A=B שניהם 1 ,ולאחר מכן A=2 ו-B=1
+    //      let a=1,b;
+    //    b=a;
+    //    a++;
+    //    console.log(a,b);
+        
+        // בתרגיל השני ה-Amount=7001 בשניהם ,ולאחר מכן ה-Salary=2 בשניהם
+       // --- refrence type
+    //    let objA = {description : 'salary 1' , amount : 7000}, objB;
+    //    objB = objA;
+    //    objA.amount++;
+    //    console.log(objA);       console.log(objB);
+    //    objB.description = 'salary 2';
+    //    console.log(objA);       console.log(objB);
+
+        //2
+
+        // A=3 B=1
+    //       let a=1,b;
+    //    b=a;
+    //    a+=2;
+    //    console.log(a,b);
+ 
+       // --- refrence type
+       // שניהם שווים
+    //    let objA = {description : 'salary 3' , amount : 7000}, objB;
+    //    objB = objA;
+    //    objA.amount++;
+    //    console.log(objA);       console.log(objB);
+    //    objB.description = 'salary 2';
+    //    console.log(objA);       console.log(objB);
+
+        //3
+
+        // b=1 ,false
+
+        // let a=1,b,obj1 = {name : 'Avi'},obj2;  
+        // b=a;
+        // a=2;
+        // console.log(b,b==a);
+
+        // obj2=yossi ,true
+
+        // obj2=obj1;
+        // obj1.name='Yossi';
+        // console.log(obj2,obj1 == obj2);
+
+        //4
+
+        // שניהם שווים ו-true
+
+        // let array1,array2 = [1,2,3,6];  
+        // array1 = array2;
+        // array1[0]=8;
+        // array2[1]=18;
+        // console.log(array1 == array2);
+        // console.log(array1,array2)
+
+        //5
+
+        // לא ישתנה מדפיס 1236
+        // let array1 = [{ name: "Jim", age: 33 }, { name: "John", age: 22 }],
+        // array2 = [1, 2, 3, 6],
+        // a,
+        // obj1;
+
+        // a = array2[2];
+        // a = 44;
+        // console.log(array2);
+        // רק האובייקט השני שינה גיל
+        // obj1 = array1[1];
+        // obj1.age = 55;
+        // console.log(array1);
+
+        //6
+
+        // מודול מקל על המפתח מלחק את הדף לחלקים ,מקל על מעקב אחרי שגיאות
+
+        // class student{
+        //     constructor(age,name,gender){
+        //         this.age = age;
+        //         this.name = name;
+        //         this.gender = gender;
+        //     }
+        //     writhStudent(){
+        //         console.log(this.age,this.name,this.gender);
+        //     }
+        // }
+
+        // const student1 = new student(29,"haim",["male","female","other"]);
+        // student1.writhStudent();
+
+        //7
+
+        // class student{
+        //     constructor(age,name,gender){
+        //         this.age = age;
+        //         this.name = name;
+        //         this.gender = gender;
+        //     }
+        //     writhStudent(){
+        //         console.log(this.age,this.name,this.gender);
+        //     }
+        //     isYoung(){
+        //         if(this.age < 18){
+        //             return true
+        //         }
+        //         else{
+        //             return false
+        //         }
+        //     }
+        // }
+
+        // const student1 = new student(17,"haim",["male","female","other"]);
+        // const student2 = new student(45,"haim",["male","female","other"]);
+        // student1.writhStudent();
+        // console.log(student1.isYoung());
+        // console.log(student2.isYoung());
+
+        //8
+
+        // class student{
+        //     constructor(age,name,gender){
+        //         this.age = age;
+        //         this.name = name;
+        //         this.gender = gender;
+        //     }
+        //     writhStudent(){
+        //         console.log(this.age,this.name,this.gender);
+        //     }
+        //     isYoung(){
+        //         if(this.age < 18){
+        //             return true
+        //         }
+        //         else{
+        //             return false
+        //         }
+        //     }
+        // }
+
+        // const student1 = new student(17,"haim",["male","female","other"]);
+        // const student2 = new student(45,"shmuel",["male","female","other"]);
+        // const student3 = new student(32,"uri",["male","female","other"]);
+        // student1.writhStudent();
+        // console.log(student1.isYoung());
+        // console.log(student2.isYoung());
+        // console.log(student3.isYoung());
+
+        // const studentsArray = [student1,student2,student3];
+        // studentsArray.forEach(element => {
+        //     console.log(element);
+        //     console.log(element.isYoung());
+        // });
+
+    </script>
+</body>
+</html>
