@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <main id="app"></main>
+    <script type="text/babel">
+    const elementDom = document.getElementById("app");
+    const newCarObj = {name: "mazda",model: 2019,horseSpeed: "450,000"};
+    const myName = "haim";
+    const myAge = 29;
+    const Link = "https://cdn.pixabay.com/photo/2017/12/10/15/16/white-horse-3010129__480.jpg";
+    const myVideo = "https://i.vimeocdn.com/video/1218658520-4aabf96b4798dcdf2362b48784cb0f0cb089f7f40c824444c7d5d8d25c906501-d_640x360.jpg";
+        //1
+
+        function PrintHello(){
+            return <p>hello</p>
+        }
+
+        //2
+
+        function NewCarObject(){
+            return <p>my car name is {newCarObj.name} and she made in the year {newCarObj.model}, she cen reach to {newCarObj.horseSpeed} horse speed.</p>
+        }
+
+        //3
+        // function ReturnName(){
+        //     return <p>my name is {myName}</p>
+        // }
+
+        //4
+        function ReturnName(){
+            return <div><p>my name is {myName}</p><PrintHello/></div>
+        }
+
+        //5
+        function HeaderMainFooter(){
+            return <section>
+                        <header><h2>hello this is header</h2></header>
+                            <main><h3>hello this is main</h3></main>
+                        <footer><h4>hello this is footer &copy;</h4></footer>
+                    </section>
+        }
+
+        //6
+        function NameAndHello(props){
+            return <section>
+                        <h1>hello {props.myName}</h1>
+                    </section>
+        }
+
+        //7
+        function AgeAndName(props){
+            return <section>
+                        <h1>this is my {props.myName} and i am {props.myAge}</h1>
+                    </section>
+        }
+
+        //8
+        function ImageLink(props){
+            return <section>
+                        <img src={props.Link} alt="image" title="horses"></img>
+                    </section>
+        }
+
+        //9
+        function Video(props){
+            console.log(props);
+            return <section>
+                        <video width="560" height="315" controls loop autoPlay src={props.myVideo}></video>
+                    </section>
+            }
+
+        ReactDOM.render(
+            <div>
+                <PrintHello/>
+                <NewCarObject/>
+                <NewCarObject/>
+                <NewCarObject/>
+                <NewCarObject/>
+                <NewCarObject/>
+                <NewCarObject/>
+                <NewCarObject/>
+                <NewCarObject/>
+                <NewCarObject/>
+                <NewCarObject/>
+                <ReturnName/>
+                <HeaderMainFooter/>
+                <NameAndHello myName = "moshe"/>
+                <NameAndHello myName = "smuel"/>
+                <NameAndHello myName = "bari"/>
+                <NameAndHello myName = "nadav"/>
+                <NameAndHello myName = "ezra"/>
+                <NameAndHello myName = "uri"/>
+                <NameAndHello myName = "yakov"/>
+                <NameAndHello myName = "wasse"/>
+                <NameAndHello myName = "segedu"/>
+                <NameAndHello myName = "maayan"/>
+                <AgeAndName myName = "jacki" myAge="31"/>
+                <AgeAndName myName = "molly" myAge="32"/>
+                <AgeAndName myName = "amenda" myAge="33"/>
+                <AgeAndName myName = "mangistu" myAge="34"/>
+                <AgeAndName myName = "roni" myAge="35"/>
+                <AgeAndName myName = "neguse" myAge="36"/>
+                <AgeAndName myName = "salomon" myAge="37"/>
+                <AgeAndName myName = "rivka" myAge="38"/>
+                <AgeAndName myName = "meigen" myAge="39"/>
+                <AgeAndName myName = "lola" myAge="40"/>
+                <ImageLink Link="https://cdn.pixabay.com/photo/2017/12/10/15/16/white-horse-3010129__480.jpg"/>
+                <ImageLink Link="https://cdn.pixabay.com/photo/2018/01/22/14/13/animal-3099035__340.jpg"/>
+                <ImageLink Link="https://cdn.pixabay.com/photo/2013/10/17/20/59/horse-197199__340.jpg"/>
+                <Video myVideo="https://player.vimeo.com/external/291012863.sd.mp4?s=7f9d2e8f1064f5d49f7725a631e178f9e934586e&profile_id=164"/>
+                <Video myVideo="https://player.vimeo.com/external/516532097.sd.mp4?s=644e0e4b8427c25c0b422f831b36a1cc17ead76f&profile_id=165"/>
+                <Video myVideo="https://player.vimeo.com/external/567908553.hd.mp4?s=41a393225974d41c2df035768055361dd75ddae3&profile_id=174"/>
+
+            </div>,elementDom)
+    </script>
+</body>
+</html>
