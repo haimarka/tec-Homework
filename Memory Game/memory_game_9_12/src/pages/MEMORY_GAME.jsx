@@ -4,12 +4,12 @@ import * as styles from './MEMORY_GAME3.module.css';
 export default class MEMORY_GAME3 extends Component {
     state = {
         imageArray: [
-            { id: 1, image: "https://cdn.pixabay.com/photo/2021/11/16/08/01/animal-6800387__340.jpg", click: false },
-            { id: 1, image: "https://cdn.pixabay.com/photo/2021/11/16/08/01/animal-6800387__340.jpg", click: false },
-            { id: 2, image: "https://cdn.pixabay.com/photo/2021/09/09/21/04/fairy-lights-6611595__480.jpg", click: false },
-            { id: 2, image: "https://cdn.pixabay.com/photo/2021/09/09/21/04/fairy-lights-6611595__480.jpg", click: false },
-            { id: 3, image: "https://cdn.pixabay.com/photo/2021/11/20/20/31/spekulatius-6812721__340.jpg", click: false },
-            { id: 3, image: "https://cdn.pixabay.com/photo/2021/11/20/20/31/spekulatius-6812721__340.jpg", click: false },
+            { id: 1, image: "https://cdn.wallpapersafari.com/83/72/DU7VOk.png", click: false },
+            { id: 1, image: "https://cdn.wallpapersafari.com/83/72/DU7VOk.png", click: false },
+            { id: 2, image: "https://c4.wallpaperflare.com/wallpaper/694/376/948/chidori-sasuke-chidori-wallpaper-preview.jpg", click: false },
+            { id: 2, image: "https://c4.wallpaperflare.com/wallpaper/694/376/948/chidori-sasuke-chidori-wallpaper-preview.jpg", click: false },
+            { id: 3, image: "https://www.syfy.com/sites/syfy/files/2019/08/kakashi-hatake-naruto.jpeg", click: false },
+            { id: 3, image: "https://www.syfy.com/sites/syfy/files/2019/08/kakashi-hatake-naruto.jpeg", click: false },
         ],
         gameSeconsd: 0,
         startGame: false,
@@ -100,6 +100,7 @@ export default class MEMORY_GAME3 extends Component {
         const { imageArray, gameSeconsd, startGame, moves, gameOver } = this.state
         return (
             <div className={styles.imagesContainer}>
+                <h1>{gameOver ? "game over" : ""}</h1>
                 {startGame ? imageArray.map((img, i) => {
                     return (
                         <div key={i} className={styles.cards}>
@@ -112,7 +113,6 @@ export default class MEMORY_GAME3 extends Component {
                 <section>
                     <button onClick={() => this.startTisGame()}>start game</button>
                     <p>seconsd: {gameSeconsd} <br /> moves: {moves}</p>
-                    <h1>{gameOver ? "game over" : ""}</h1>
                 </section>
             </div>
         )

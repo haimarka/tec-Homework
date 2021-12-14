@@ -1,3 +1,9 @@
+body{
+    background-image: url("https://cdn.pixabay.com/photo/2020/11/17/13/22/naruto-5752318_960_720.png");
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
 .imagesContainer{
     display: grid;
     position: relative;
@@ -7,17 +13,84 @@
 }
 
 img{
-    width: 200px;
-    height: 200px;
+    width: 30vw;
+    height: 38vh;
 }
 .card{
     position: absolute;
-    width: 200px;
-    height: 200px;
-    background-color: black;
-    justify-content: center;
+    width: 80%;    
+    height: 100%;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Naruto_logo.svg/800px-Naruto_logo.svg.png");
 }
 .cards{
     display: flex;
+    justify-content: center;
     position: relative;
+}
+p,h2{
+    color: white;
+}
+
+h1{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border: solid 5px orange;
+    background-color: rgb(8, 8, 83);
+    color: white;
+    font-size: 400%;
+    position:absolute;
+    z-index: 2;
+    margin-left: 40% ;
+    margin-top: 15%;
+
+}
+
+
+button {
+    margin-left: 150px;
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+button:active,
+button:hover {
+  outline: 0;
+}
+
+button span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+button:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  button {
+    font-size: 24px;
+    min-width: 196px;
+  }
 }
