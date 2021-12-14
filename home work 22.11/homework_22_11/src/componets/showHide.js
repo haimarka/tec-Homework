@@ -2,9 +2,7 @@ import React from "react";
 
 class ShowHide extends React.Component {
     state ={visibility: "visible"}
-    hideText = () => {this.setState({
-        visibility: this.state.visibility == "visible"?"hidden":"visible"
-    })}
+    hideText = () => this.setState({visibility: this.state.visibility == "visible"?"hidden":"visible"})
     render(props) {
         let styleText = {visibility: this.state.visibility}
         return (

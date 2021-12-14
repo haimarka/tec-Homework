@@ -1,0 +1,23 @@
+.imagesContainer{
+    display: grid;
+    position: relative;
+    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(3,1fr);
+
+}
+
+img{
+    width: 200px;
+    height: 200px;
+}
+.card{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    justify-content: center;
+}
+.cards{
+    display: flex;
+    position: relative;
+}

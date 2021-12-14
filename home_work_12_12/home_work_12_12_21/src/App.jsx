@@ -1,0 +1,36 @@
+import './App.css';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Courses from './pages/Courses';
+import Mentoring from './pages/Mentoring';
+import Testimonials from './pages/Testimonials';
+import Events from './pages/Events';
+import { BrowserRouter , Switch, Route, Link} from 'react-router-dom';
+
+function App (){
+
+   return (
+     <BrowserRouter>
+       <div className="App">
+          <Link to='/'>Home</Link> <Link to='/About'>About</Link> <Link to="/Contact">Contact</Link> <Link to="/Courses">Courses</Link> <Link to="/Mentoring">Mentoring</Link> <Link to="/Testimonials">Testimonials</Link> <Link to="/Events">Events</Link>
+           <hr />
+         <Switch>
+           <Route exact path='/' component={Home}/>
+           <Route exact path='/About' component={About}/>
+           <Route exact path={'/Contact'} component={Contact}/>
+           <Route exact path={'/Courses'} component={Courses}/>
+           <Route exact path={'/Mentoring'} component={Mentoring}/>
+           <Route exact path={'/Testimonials'} component={Testimonials}/>
+           <Route exact path={'/Events'} component={Events}/>
+           
+         </Switch>
+        <a href="https://github.com/NathanKr"><img src="https://cdn.pixabay.com/photo/2021/09/11/12/17/github-6615451__340.png" alt="youtube" /></a>
+        <a href="https://www.linkedin.com/in/nathankrasney/?src=aff-lilpar&veh=aff_src.aff-lilpar_c.partners_pkw.123201_plc.adgoal%20GmbH_pcrid.449670_learning&trk=aff_src.aff-lilpar_c.partners_pkw.123201_plc.adgoal%20GmbH_pcrid.449670_learning&clickid=Rl9yE-wBjxyIU%3AxSV8yN1RxiUkGzcP3Y1xYIWI0&mcid=6851962469594763264&irgwc=1"><img src="data:image/png;base64,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" alt="youtube" /></a>
+        <a href="https://www.youtube.com/channel/UChOjjkqtxDPixwU7IFC1YHw"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAeFBMVEX/AAD/////u7v/6+v/0ND/aWn/mZn/zc3/9fX/h4f/5ub/+Pj/tbX/t7f/oKD/ODj/Kir/3d3/wMD/MzP/UVH/1dX/yMj/qan/lJT/TU3/gID/Fxf/PT3/eHj/Dg7/jY3/ZWX/Q0P/XV3/IiL/cXH/q6v/X1//eXnZjuaVAAAE20lEQVR4nO2d63aiQAyAOyKgXAVF0Lbrtbvv/4YLZ9didUDQQEjI9689RyffwcCQub0p7rxhB9A5YkgfMaSPGNJHDOkjhvQRQ/qIIX3EkD5iSB8xpI8Y0kcM6SOG9BFD+oghfcSQPmJIHzGkjxi+jHEhml4Tff+/6wBeMXTdWU6SrD0/DQIry3Z709yEYbh4e45F/tmNae53WWYFQep76yQpmnDd3gxdw4mi2LPm27O5OZzenzRpy/vpsDHP27nlxVHkGO18Gxo6dmx9HjfLvpzqeF9ujp9WbDtQhnZqPvur65qFmdovGjrBCtviIaug/mLWGdp77Ogbsq+7ktWG0fAvX8kqam+4xQ66JduWhk6IHXFrwop01BuuscN9inVzQw871ifxmhr62JE+jd/MMMGO8wWSJoYudpQvcd9nvTc8Ygf5EsfHhlTvMhfu7ja3hu4JO8QXOd3+Tm8NA+wIXyZ4YIgdHwD1htSzsMCrNTxghwfAoc7QwI4OBKPGcIIdHAiTGsMzdnAgnGsMP7CDA+Gj2tDBjg0Ip9LQxg4NCLvS0MIODQir0vATOzQgPisNedxobm4114Yz7MjAmFUY8ujRFBgVhjRriDrWFYYpdmBgpBWGXB4WPx8X14Y8eqUF5wrDJXZgYCwrDLHjAmSshnwehz8eiFeGlMcrbkm0hjF0M4hTOGKtIfig2iRGm37jaw3Ba6UTpTLo72yIpzWcQzdT1LwMnG7EXGtoQjfzr6qXbKC/twGm1hB84PBSt4x/QX/zQ45aQ/A3/LIy23uf/kNrCH5zv6o9Gz2XgBa9GyoV9ZqOWsMZeLb8HD9QcY/Dy79mGIZ9pqPWMAJv5s5QGb3NB4yQDPub06kznIK3ojPM07GXDvkU0VCpoIcegM4QfuCpylDNwLvAd5TDTyiGSjldp6POEL7iXWOYN9dtZa+sepeGX+Ct1BoqlXaZjl8aQ/ia/gPDTtOxrOtjGubp2NlUT53hDryVx4Z5OnY0KrvTGML/ZJoY5vnfSTqWZQx8w27ScVCGeTr+Bm9bZwjf7W9smKcj9KTIcpFQaQheamtjqJQHm45lsW0whsBpMkhDZezh2h6mYf4GB5aOQzVUygcazBmuoVIwd5zhGnK/htzzkP29lPvzsIc+Da9+6R+NIf93C3k/bM/Q3vH512n419r410v517z5j1vwH3viP37IfwyY/zg+/7kY/OfT8J8TxX9eG/+5iSOYX8p/jjD/ed785+rzX2/Bf80M/3VP/Neu8V9/yH8NKf91wCMw5L8en/+eCvz3xeC/twn//Wn4PBCr9hjiv08U/72+RrBfG5fHRfWee/z3TeS/9yWTW03N/qVMeqZ1e9Dy30eYR6+mbi9o/vt5s9iT3a815FDJuDW6+Zv/2Qj8z7cgn4kPzygZwTkzIzgriPT4RaPznij33XSzsHSGZO82jc9do1pXbHF23gjOP1T8z7BUIziHVPE/S7aA+3nA/68k6zOdy4vJ+Vzuaxifra73dYvD65Nk7flpEFhZttub5ioMw2d/1Yv8syvT3O+yzAqC1PfsJCmacNs5wRk2wrgQTa+Jvv/fdQCdG6IjhvQRQ/qIIX3EkD5iSB8xpI8Y0kcM6SOG9BFD+oghfcSQPmJIHzGkjxjSRwzpI4b0EUP6iCF9/gKCNIdvAhrz/wAAAABJRU5ErkJggg==" alt="youtube" /></a>
+        <a href="https://www.udemy.com/user/nathan-krasney/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRre_TJ1OV4g5Gwomcv8gj9hW29u17iDzX1bA&usqp=CAU" alt="youtube" /></a>
+        <p>© 2020 NATHAN KRASNEY. ALL RIGHTS RESERVED.</p>
+
+       </div>
+     </BrowserRouter>);}
+export default App;

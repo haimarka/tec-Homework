@@ -1,0 +1,33 @@
+body{
+    background-image: url("https://nathankrasney.com/static/media/main-pic-2.b78450bf.jpg");
+}
+h1{
+    color: blue;
+}
+h2{
+    color: white;
+    font-size: 300%;
+    float: left;
+}
+img{
+    padding: 1%;
+    width: 40px;
+    height: 40px;
+}
+
+a,img{
+    margin-top: 31%; 
+    text-decoration: none;
+    transition: 1s;
+    
+}
+
+a{
+    color: white;
+}
+a:hover{
+    text-decoration: underline;
+    transition: 1s ;
+    color: red;
+}
+
