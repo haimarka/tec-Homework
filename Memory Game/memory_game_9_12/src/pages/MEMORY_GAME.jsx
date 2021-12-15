@@ -23,8 +23,8 @@ export default class MEMORY_GAME3 extends Component {
     Attempts = 0;
     CHECK_CLICK;
 
-    startTisGame = () => {
-        this.setState({ startGame: true, gameOver: false, gameSeconsd: 0 })
+    startMemoryGame = () => {
+        this.setState({ startGame: true, gameOver: false, gameSeconsd: 0})
         this.timeInGame()
         this.shuffleImages()
 
@@ -111,7 +111,7 @@ export default class MEMORY_GAME3 extends Component {
                 }) : ""}
                 <div></div>
                 <section>
-                    <button onClick={() => this.startTisGame()}>start game</button>
+                    <button onClick={() => this.startMemoryGame()}>start game</button>
                     <p>seconsd: {gameSeconsd} <br /> moves: {moves}</p>
                 </section>
             </div>
