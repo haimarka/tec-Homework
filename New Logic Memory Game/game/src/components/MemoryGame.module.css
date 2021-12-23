@@ -1,0 +1,41 @@
+body{
+    background-image: url("https://img5.goodfon.com/wallpaper/nbig/4/6a/naruto-naruto-uzumaki-naruto-nebo-oblaka-malchik.jpg");
+    background-size: cover;
+}
+
+h1{
+    background-color: black;
+    color: white;
+    opacity: 0.8;
+}
+
+.cardsConteiner{
+    display: grid;
+    grid-template-columns: repeat(3,33%);
+    row-gap: 10%;  
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+.cards{
+    width: 300px;
+    height: 300px;
+    background: url("https://i.ebayimg.com/images/g/WEkAAOSw9Ideqzwn/s-l1600.jpg ");
+    background-size: 100% 100%;
+    /* background-attachment: fixed; */
+    /* background-size: 100% 100%; */
+    
+}
+
+
+.gameOver{
+    position: absolute;
+    font-size: 300%;
+    margin-top: 20%;
+    margin-left: 35%;
+    padding: 5%;
+}
+
