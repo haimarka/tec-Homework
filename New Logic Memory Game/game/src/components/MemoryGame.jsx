@@ -182,23 +182,23 @@ export default class MemoryGame extends Component {
     const { array ,startGame ,gameSeconds ,moves ,gameOver ,history} = this.state;
     console.log(history);
     return (
+      <div className={styles.app}>
+      <h1>Memory Game</h1>
+      <button onClick={()=>{this.startMemoryGame()}} className={styles.button}><span>start game</span></button>
       <div className={styles.cardsConteiner}>
         {startGame?array.map((img, i) => { 
          return <div key={i}>
             <button disabled={img.click} 
              onClick={()=>{this.isCardsEven(i)}} className={styles.cards}>{img.click?<img src={img.image}/>:""}</button>
           </div>;
-        }):""}<br/>
-      <button onClick={()=>{this.startMemoryGame()}}>start game</button> 
-      
-      <button onClick={()=>this.setState({history: this.getHistory()})}>show history</button> 
+        }):""}</div><br/>
+      <button className={styles.button} onClick={()=>this.setState({history: this.getHistory()})}><span>show history</span></button> 
         {history.map((it,i)=>{
           <div key={i}>
             <p>seconds: {it.time} moves: {it.moves}</p>
             </div>
           })}
-      
-        <h1>seconds: {gameSeconds} torns: {moves}</h1><br />
+        <h1 className={styles.details}>seconds: {gameSeconds} torns: {moves}</h1><br />
         {gameOver?<h1 className={styles.gameOver}>{gameOver? "Game Over":""}</h1>:""}
         {history}
       </div>
