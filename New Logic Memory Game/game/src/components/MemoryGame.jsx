@@ -45,13 +45,25 @@ export default class MemoryGame extends Component {
     gameSeconds: 0,
     moves: 0,
     gameOver: false,
+    history: [],
   };
 
   timer = null;
   img_1;
   img_2;
   attempts = 0;
-  
+  LOCAL_STORAGE_KEY = "choose_even_history_key";
+
+    getHistory = () =>{
+      let jsonHistory = localStorage.getItem(this.LOCAL_STORAGE_KEY);
+      return jsonHistory ? JSON.parse(jsonHistory):[];
+    }
+
+    appendToHistory = (time,moves)=>{
+      let historyAray = this.getHistory();
+      historyAray.push({time, moves})
+      localStorage.setItem(this.LOCAL_STORAGE_KEY, JSON.stringify(historyAray))
+    }
 
   startMemoryGame = ()=>{
      this.setState({ array: [
@@ -113,13 +125,11 @@ export default class MemoryGame extends Component {
 
   isGameOver = ()=>{
     if(this.attempts == 3){
-      this.setState({gameOver: true })
-      this.stopTime()
-      this.shuffle()
-      // const temp = [...this.state.array];
-      // for (let i = 0; i < temp.length; i++) {
-      //    temp[i].click = false
-      // }   
+      setTimeout(() => {
+        this.setState({gameOver: true })
+        this.stopTime()
+        this.appendToHistory(this.state.gameSeconds ,this.state.moves)
+      }, 300);
     }
  
     
@@ -157,7 +167,7 @@ export default class MemoryGame extends Component {
         }
         else{
             setTimeout(() => {
-                console.log("not match");
+            console.log("not match");
             this.setState({moves: this.state.moves + 1})
             this.img_1.click = false
             this.img_2.click = false
@@ -169,7 +179,8 @@ export default class MemoryGame extends Component {
   }
 
   render() {
-    const { array ,startGame ,gameSeconds ,moves ,gameOver} = this.state;
+    const { array ,startGame ,gameSeconds ,moves ,gameOver ,history} = this.state;
+    console.log(history);
     return (
       <div className={styles.cardsConteiner}>
         {startGame?array.map((img, i) => { 
@@ -179,8 +190,17 @@ export default class MemoryGame extends Component {
           </div>;
         }):""}<br/>
       <button onClick={()=>{this.startMemoryGame()}}>start game</button> 
-        <h1>seconds: {gameSeconds} moves: {moves}</h1><br />
+      
+      <button onClick={()=>this.setState({history: this.getHistory()})}>show history</button> 
+        {history.map((it,i)=>{
+          <div key={i}>
+            <p>seconds: {it.time} moves: {it.moves}</p>
+            </div>
+          })}
+      
+        <h1>seconds: {gameSeconds} torns: {moves}</h1><br />
         {gameOver?<h1 className={styles.gameOver}>{gameOver? "Game Over":""}</h1>:""}
+        {history}
       </div>
     );
   }
