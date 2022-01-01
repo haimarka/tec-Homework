@@ -61,7 +61,7 @@ export default class MemoryGame extends Component {
 
     appendToHistory = (time,moves)=>{
       let historyAray = this.getHistory();
-      historyAray.push({time, moves})
+      historyAray.push({seconds: time, torns: moves})
       localStorage.setItem(this.LOCAL_STORAGE_KEY, JSON.stringify(historyAray))
     }
 
@@ -195,7 +195,8 @@ export default class MemoryGame extends Component {
       <button className={styles.button} onClick={()=>this.setState({history: this.getHistory()})}><span>show history</span></button> 
         {history.map((it,i)=>{
           <div key={i}>
-            <p>seconds: {it.time} moves: {it.moves}</p>
+            <p>seconds: {it.seconds}</p>
+            <p> moves: {it.torns}</p>
             </div>
           })}
         <h1 className={styles.details}>seconds: {gameSeconds} torns: {moves}</h1><br />
