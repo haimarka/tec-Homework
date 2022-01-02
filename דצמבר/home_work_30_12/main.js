@@ -11,6 +11,23 @@
 // }
 // console.log(returnNumSum(123, 0));
 
+// uri's solution
+// function sumDigits(num){
+//     if(!num) return 0;
+//     return (num % 10 + sumDigits(parseInt(num / 10)));
+// }
+// console.log(sumDigits(123));
+
+// barano's solution
+// function calcSum(num ,sum){
+//     if(!num) return sum;
+//     sum += num % 10;
+//     num = Math.floor(num / 10);
+//     return calcSum(num,sum)
+// }
+
+// console.log(calcSum(123,0));
+
 //2
 // let array = [7,1, 2, 3, 4, 5];
 // function returnMinNumber(arr, min) {

@@ -1,11 +1,10 @@
-import { useState, useMemo } from "react";
+import { useState, useCallback } from "react";
 
-const PerformanceProblem = () => {
+const PerformanceCallbackSolution = () => {
   const [flag, setFlag] = useState(false);
   let num = 1;
-  useMemo(()=>{
+  useCallback(()=>{
     expensiveCalculation(num);
-      
   },[num])
 
   function expensiveCalculation(num) {
@@ -28,4 +27,4 @@ const PerformanceProblem = () => {
   );
 };
 
-export default PerformanceProblem;
+export default PerformanceCallbackSolution;
