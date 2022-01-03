@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import logo from './logo.svg'
 import './App.css'
 import Data from './components/Data'
 import Preformance from './components/preformance'
@@ -15,7 +14,7 @@ function App() {
       {/* <Data/> */}
       {/* <Preformance/> */}
       {/* <PerformanceProblem/> */}
-      <PerformanceCallbackSolution/>
+      {/* <PerformanceCallbackSolution/> */}
     </div>
   )
 }

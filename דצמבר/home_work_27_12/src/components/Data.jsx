@@ -1,4 +1,5 @@
 import React from 'react'
+import Spinner from './Spinner.jsx'
 import { useFetch } from './useFetch.js'
 
 export default function Data() {
@@ -10,7 +11,7 @@ export default function Data() {
         ))
     return (
         <div>
-            {getReddit.isLoading?'loading..':""}
+            {getReddit.isLoading?<Spinner/>:""}
             {getReddit.error?"error":""}
             {elements}
         </div>
